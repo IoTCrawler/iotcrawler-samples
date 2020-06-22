@@ -1,0 +1,29 @@
+{
+  "id":"urn:ngsi-ld:IotStream:",
+  "type":"iot-stream:IotStream",
+  "iot-stream:generatedBy": {
+    "type": "Relationship",
+    "object": "urn:ngsi-ld:Sensor:"
+  },
+  "qoi:hasQuality": {
+    "type": "Relationship",
+    "object": "urn:ngsi-ld:Quality:noqualityyet"
+  },
+  "@context":[
+    "http://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",{
+      "iot-stream": "http://purl.org/iot/ontology/iot-stream#",
+      "qoi": "https://w3id.org/iot/qoi#"
+    }
+  ]
+}
+
+
+
+
+
+
+
+
+
+
+

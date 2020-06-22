@@ -1,0 +1,31 @@
+{
+  "id":"urn:ngsi-ld:StreamObservation:",
+  "type":"iot-stream:StreamObservation",
+  "iot-stream:belongsTo": {
+    "type":"Relationship",
+    "object": "urn:ngsi-ld:IotStream:"
+  },
+  "sosa:hasSimpleResult": {
+    "type":"Property",
+    "value": 0,
+    "observedAt": 0
+  },
+  "sosa:resultTime": {
+    "type": "Property",
+    "value": 0
+  },
+  "sosa:madeBySensor": {
+    "type":"Relationship",
+    "object": "urn:ngsi-ld:Sensor"
+  },
+  "sosa:observedProperty": {
+    "type":"Relationship",
+    "object": "urn:ngsi-ld:ObservableProperty"
+  },
+  "@context":[
+    "http://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",{
+      "iot-stream": "http://purl.org/iot/ontology/iot-stream#",
+      "sosa": "http://www.w3.org/ns/sosa/"
+    }
+  ]
+}

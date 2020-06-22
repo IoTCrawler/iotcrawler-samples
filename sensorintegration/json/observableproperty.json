@@ -1,0 +1,14 @@
+{
+  "id":"urn:ngsi-ld:ObservableProperty:",
+  "type": "sosa:ObservableProperty",
+  "rdfs:label": {
+    "type": "Property",
+    "value": ""
+  },
+  "@context":[
+    "http://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",{
+      "sosa": "http://www.w3.org/ns/sosa/Sensor/",
+      "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "id": "urn:ngsi-ld:Sensor:",
+  "type": "sosa:Sensor",
+  "location": {
+    "type": "GeoProperty",
+    "value": {
+      "type": "Point",
+      "coordinates": [
+        0,
+        0
+      ]
+    }
+  },
+  "sosa:isHostedBy": {
+    "type": "Relationship",
+    "object": "urn:ngsi-ld:Platform:"
+  },
+  "sosa:observes": {
+    "type": "Relationship",
+    "object": "urn:ngsi-ld:ObservableProperty:"
+  },
+  "sosa:madeObservation": {
+    "type": "Relationship",
+    "object": "urn:ngsi-ld:StreamObservation:"
+  },
+  "qoi:updateinterval": {
+    "type": "Property",
+    "value": "NA",
+    "qoi:unit": {
+      "type": "Property",
+      "value": "NA"
+    }
+  },
+  "qoi:valuetype": {
+    "type": "Property",
+    "value": "NA"
+  },
+  "qoi:min": {
+    "type": "Property",
+    "value": "NA"
+  },
+  "qoi:max": {
+    "type": "Property",
+    "value": "NA"
+  },
+  "@context": [
+    "http://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+    {
+      "sosa": "http://www.w3.org/ns/sosa/",
+      "qoi": "https://w3id.org/iot/qoi#"
+    }
+  ]
+}
