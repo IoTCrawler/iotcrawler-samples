@@ -1,0 +1,51 @@
+{
+	"info": {
+		"_postman_id": "0f778f82-926a-4dd2-b945-226bf41a6c98",
+		"name": "Test-SecurityFacade",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST - Security Facade - Obtain Capability token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "action",
+						"type": "text",
+						"value": "{{action}}"
+					},
+					{
+						"key": "resource",
+						"value": "{{resource}}",
+						"type": "text"
+					},
+					{
+						"key": "device",
+						"value": "https://{{PEP-Proxy-IP}}:{{PEP-Proxy-Port}}",
+						"type": "text"
+					},
+					{
+						"key": "idemixIdentity",
+						"value": "{\"name\": \"admin@test.com\",\"password\": \"1234\"}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{Facade-IP}}:{{Facade-Port}}/CapabilityManagerServlet/IdemixTokenIdentity",
+					"protocol": "https",
+					"host": [
+						"{{Facade-IP}}"
+					],
+					"port": "{{Facade-Port}}",
+					"path": [
+						"CapabilityManagerServlet",
+						"IdemixTokenIdentity"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
