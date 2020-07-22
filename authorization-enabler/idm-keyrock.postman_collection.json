@@ -1,0 +1,89 @@
+{
+	"info": {
+		"_postman_id": "609668c6-4a4a-4b78-8fe0-ab619c409409",
+		"name": "Test-IdM-Keyrock",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST - IDM - Generate token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a27b7ab9-4146-48fe-bf5e-f490f8212646",
+						"exec": [
+							"var token = postman.getResponseHeader(\"X-Subject-Token\")",
+							"pm.environment.set(\"idmToken\", token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"admin@test.com\",\n  \"password\": \"1234\"\n}"
+				},
+				"url": {
+					"raw": "https://{{IdM-IP}}:{{IdM-Port}}/v1/auth/tokens",
+					"protocol": "https",
+					"host": [
+						"{{IdM-IP}}"
+					],
+					"port": "{{IdM-Port}}",
+					"path": [
+						"v1",
+						"auth",
+						"tokens"
+					]
+				},
+				"description": "https://fiware-idm.readthedocs.io/en/latest/getting_started/index.html\n\nRequest using default user credentials.\n\nObtain API token from X-Subject-Header in response"
+			},
+			"response": []
+		},
+		{
+			"name": "GET - IDM - Obtain IDM token information",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Auth-token",
+						"name": "Content-Type",
+						"value": "{{idmToken}}",
+						"type": "text"
+					},
+					{
+						"key": "X-Subject-token",
+						"value": "{{idmToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{IdM-IP}}:{{IdM-Port}}/v1/auth/tokens",
+					"protocol": "https",
+					"host": [
+						"{{IdM-IP}}"
+					],
+					"port": "{{IdM-Port}}",
+					"path": [
+						"v1",
+						"auth",
+						"tokens"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
